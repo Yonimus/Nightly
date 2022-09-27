@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express.js": "^1.0.0",
+    "mysql2": "^2.3.3",
+    "node.js": "^0.0.1-security",
+    "sequelize": "^6.23.1"
+  }
+}
