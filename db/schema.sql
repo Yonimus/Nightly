@@ -14,6 +14,7 @@ CREATE TABLE moodtracking (
     act4 VARCHAR(30),
     act5 VARCHAR(30),
     act6 VARCHAR(30),
+    message VARCHAR(210)
     PRIMARY KEY (id)
 
 );
