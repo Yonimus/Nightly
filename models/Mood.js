@@ -2,11 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
- 
 
 class Mood extends Model {}
-
- 
 
 Mood.init(
 
@@ -15,81 +12,61 @@ Mood.init(
     id: {
 
       type: DataTypes.INTEGER,
-
       allowNull: false,
-
       primaryKey: true,
-
       autoIncrement: true,
 
     },
 
     userid: {
-
       type: DataTypes.STRING,
-
-      allowNull: false,
-
-    },
-
-    mood: {
-
-      type: DataTypes.STRING,
-
-      allowNull: false,
-
-    },
-
-    act1: {
-
-      type: DataTypes.STRING,
-
       allowNull: true,
 
     },
 
-    act2: {
+    mood: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-        type: DataTypes.STRING,
+    moodtext: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-        allowNull: true,
-
-      },
-
-    act3: {
-
-    type: DataTypes.STRING,
-
-    allowNull: true,
+    cooking: {
+      type: DataTypes.STRING,
+      allowNull: true,
 
     },
 
-    act4: {
-
+    musicact: {
         type: DataTypes.STRING,
-
         allowNull: true,
-
       },
 
-    act5: {
-
+    meditateact: {
     type: DataTypes.STRING,
-
     allowNull: true,
-
     },
 
-    act6: {
-
+    schoolact: {
         type: DataTypes.STRING,
-
         allowNull: true,
-
       },
 
-    }
+    junkact: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    },
 
+    bingeact: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+    },
+{
  
 
 //     hooks: {
@@ -118,17 +95,17 @@ Mood.init(
 
 //     },
 
-//     sequelize,
+    sequelize,
 
-//     timestamps: false,
+    timestamps: false,
 
-//     freezeTableName: true,
+    freezeTableName: true,
 
-//     underscored: true,
+    underscored: true,
 
-//     modelName: 'mood',
+    modelName: 'mood',
 
-//   }
+  }
 
 );
 

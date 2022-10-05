@@ -7,13 +7,14 @@ CREATE TABLE moodtracking (
     id INT NOT NULL,
     userid VARCHAR(30),
     date DATE,
-    mood INT NOT NULL,
-    act1 VARCHAR(30),
-    act2 VARCHAR(30),
-    act3 VARCHAR(30),
-    act4 VARCHAR(30),
-    act5 VARCHAR(30),
-    act6 VARCHAR(30),
+    mood VARCHAR(30),
+    moodtext VARCHAR(30),
+    cooking VARCHAR(30),
+    musicact VARCHAR(30),
+    meditateact VARCHAR(30),
+    schoolact VARCHAR(30),
+    junkact VARCHAR(30),
+    bingeact VARCHAR(30),
     PRIMARY KEY (id)
 
 );

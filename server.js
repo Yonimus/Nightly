@@ -8,6 +8,21 @@ const sequelize = require('./config/connection');
 const exp = require('constants');
 // const helpers = require('./utils/helpers');
 
+
+// const mysql = require('mysql2')
+
+
+// const db = mysql.createConnection(
+//   {
+//       host: 'localhost',
+//       user: 'root',
+//       password: 'root',
+//       database: 'Emotions_Db'
+//   },
+//   console.log('We are live, people')
+// )
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
