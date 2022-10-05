@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection');
 
 
@@ -8,20 +7,16 @@ class Mood extends Model {}
 Mood.init(
 
   {
-
     id: {
-
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-
     },
 
     userid: {
       type: DataTypes.STRING,
       allowNull: true,
-
     },
 
     mood: {
@@ -68,32 +63,6 @@ Mood.init(
     },
 {
  
-
-//     hooks: {
-
-   
-
-//       beforeCreate: async (newUserData) => {
-
- 
-
-//         newUserData.email = await newUserData.email.toLowerCase();
-
-//         return newUserData;
-
-//       },
-
-   
-
-//       beforeUpdate: async (updatedUserData) => {
-
-//         updatedUserData.email = await updatedUserData.email.toLowerCase();
-
-//         return updatedUserData;
-
-//       },
-
-//     },
 
     sequelize,
 
