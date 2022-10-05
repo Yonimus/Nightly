@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Mood extends Model {} 
+
+class Mood extends Model {}
 
 Mood.init(
 
@@ -15,7 +16,7 @@ Mood.init(
 
     userid: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
 
     mood: {
@@ -23,55 +24,60 @@ Mood.init(
       allowNull: false,
     },
 
-    act1: {
+    moodtext: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    cooking: {
       type: DataTypes.STRING,
       allowNull: true,
+
     },
 
-    act2: {
+    musicact: {
         type: DataTypes.STRING,
         allowNull: true,
       },
 
-    act3: {
+    meditateact: {
     type: DataTypes.STRING,
     allowNull: true,
     },
 
-    act4: {
+    schoolact: {
         type: DataTypes.STRING,
         allowNull: true,
       },
 
-    act5: {
+    junkact: {
     type: DataTypes.STRING,
     allowNull: true,
     },
 
-    act6: {
+    bingeact: {
         type: DataTypes.STRING,
         allowNull: true,
       },
+
     },
 {
-  hooks: {
-
-      beforeCreate: async (newUserData) => {
-        newUserData.email = await newUserData.email.toLowerCase();
-        return newUserData;
-      },
-
-      beforeUpdate: async (updatedUserData) => {
-        updatedUserData.email = await updatedUserData.email.toLowerCase();
-        return updatedUserData;
-      },
-    },
+ 
 
     sequelize,
+
     timestamps: false,
+
     freezeTableName: true,
+
     underscored: true,
+
     modelName: 'mood',
-});
+
+  }
+
+);
+
+ 
 
 module.exports = Mood;
