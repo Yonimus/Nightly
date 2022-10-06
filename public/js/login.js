@@ -1,29 +1,33 @@
+const subm = document.querySelector('#login');
+
 const loginFormHandler = async (event) => {
-    event.preventdefault();
-
-    const email = document.querySelector('#email-login').ariaValueMax.trim();
-    const password = document.querySelector('#password-login').ariaValueMax.trim();
-
+    event.preventDefault();
+  
+    // Collect values from the login form
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
+  
     if (email && password) {
-        const response = await fetch('/api/user/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (response.ok) {
-            document.location.replace('/profile');
-        } else {
-            alert('Failed to log in.');
-        }
-    }
-};
+      // Send a POST request to the API endpoint
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        // If successful, redirect the browser to the profile page
+        document.location.replace('/profile');
+      } else {
+        alert(response.statusText);
+      }
+    };
 
 const signupFormHandler = async (event) => {
     event.preventdefault();
     
-    const username = document.querySelector('#username-signup').ariaValueMax.trim();
-    const email = document.querySelector('#email-signup').ariaValueMax.trim();
+    const username = document.querySelector('#username-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup')
 
     if (username && email && password) {
@@ -34,7 +38,7 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok){
-            document.location.replace('/profile');
+            document.location.replace('/submitmood');
         } else {
             alert('Failed to sign up.')
         }
