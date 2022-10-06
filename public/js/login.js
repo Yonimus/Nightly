@@ -44,8 +44,4 @@ const signupFormHandler = async (event) => {
         }
     }};
 
-    // function loginFail () {
-    // alert('test')
-    // }
 
-subm.addEventListener('submit', loginFormHandler());

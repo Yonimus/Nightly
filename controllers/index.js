@@ -6,7 +6,7 @@ const homeRoutes = require('./home-routes.js');
 // const cardpage = require('./cardpage.js');
 
 router.use('/', homeRoutes);
-router.use('/', apiRoutes);
+router.use('/api', apiRoutes);
 
 // router.use('/cards', cardpage);
 // router.use('/', apiRoutes);

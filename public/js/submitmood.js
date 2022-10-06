@@ -1,7 +1,3 @@
-
-const subm = document.querySelector("#button");
-
-
 const addnewmood = async (event) => {
         event.preventDefault();
 
@@ -24,7 +20,7 @@ const addnewmood = async (event) => {
 
         if (happy || neutral || sad || amazing && moodtext ) {
         
-            let mood, cooking, musicact, meditateact, schoolact, junkact, bingeact;
+            let mood, cooking, musicact, meditateact, schoolact, junkact, bingeact, id;
 
 
             if(happy){
@@ -62,27 +58,33 @@ const addnewmood = async (event) => {
             if(binge){
                bingeact = "Binged a TV Show"
             } 
-
+            
+            id=[Math.floor(Math.random() * 100000)];
 
             console.log(mood)
             console.log(cooking)
             console.log(musicact)
+            console.log(id)
             
             const response = await fetch('/api/mood', {
-            method: 'POST',
-            body: JSON.stringify({ 
-                mood, 
-                moodtext,
-                cooking,
-                musicact,
-                meditateact,
-                schoolact,
-                junkact,
-                bingeact}),
-            headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+                body: JSON.stringify({ mood, moodtext,cooking,musicact, schoolact, junkact, bingeact}),
+                headers: { 'Content-Type': 'application/json' },
             });
+            if(response.ok){
+                document.location.replace('/cards')
+            } else {
+                alert('Failed to submit mood')
+            }
 
     }};
 
 
+
+    
+const subm = document.querySelector("#button");
+
+
 subm.addEventListener('click', addnewmood)
+
+// ,musicact,meditateact,schoolact,junkact,bingeact
