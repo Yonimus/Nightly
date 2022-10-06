@@ -1,12 +1,15 @@
 const router = require('express').Router();
-const { Mood } = require('../../models/Mood');
+const { Mood } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
-      const userData = await Mood.create(req.body);
+
+      const moodData = await Mood.create(req.body);
 
     } catch (err) {
+
       res.status(400).json(err);
+
     }
   });
 

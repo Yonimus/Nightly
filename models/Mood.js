@@ -62,7 +62,6 @@ Mood.init(
 
     },
 {
- 
 
     sequelize,
 
@@ -72,7 +71,7 @@ Mood.init(
 
     underscored: true,
 
-    modelName: 'mood',
+    modelName: 'Mood',
 
   }
 
