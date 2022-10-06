@@ -68,7 +68,7 @@ const addnewmood = async (event) => {
             
             const response = await fetch('/api/mood', {
                 method: 'POST',
-                body: JSON.stringify({ mood, moodtext,cooking}),
+                body: JSON.stringify({ mood, moodtext,cooking,musicact, schoolact, junkact, bingeact}),
                 headers: { 'Content-Type': 'application/json' },
             });
             if(response.ok){
